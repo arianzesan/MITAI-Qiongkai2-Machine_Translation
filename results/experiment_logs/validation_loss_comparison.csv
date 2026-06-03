@@ -1,0 +1,4 @@
+Model,Validation loss,Training loss,Training time seconds
+Baseline mT5-small,3.1324,5.9029,735.46
+Reverse mT5-small,3.5817,6.2214,609.03
+Improved filtered BT mT5-small,3.068,5.6095,940.81

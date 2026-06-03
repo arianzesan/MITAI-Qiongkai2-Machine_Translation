@@ -1,0 +1,76 @@
+{
+  "created_at": "2026-06-03 02:39:02",
+  "config": {
+    "model_name": "google/mt5-small",
+    "dataset_name": "ai4bharat/samanantar",
+    "dataset_config": "bn",
+    "train_size": 5000,
+    "validation_size": 500,
+    "test_size": 500,
+    "base_pool_size_for_same_split": 7500,
+    "synthetic_candidates": 3000,
+    "synthetic_target": 2000,
+    "min_filtered_synthetic": 1500,
+    "baseline_epochs_if_needed": 3,
+    "reverse_epochs": 3,
+    "improved_epochs": 3,
+    "batch_size": 4,
+    "gradient_accumulation_steps": 4,
+    "effective_batch_size": 16,
+    "learning_rate": 0.0001,
+    "optimizer": "Adafactor",
+    "fp16": false,
+    "max_source_length": 128,
+    "max_target_length": 128,
+    "generation_max_new_tokens": 96,
+    "bleu_tokenizer": "flores200",
+    "gpu": "Tesla T4"
+  },
+  "full_samanantar_bn_train_examples": 8604580,
+  "preprocessing": {
+    "candidate_rows_scanned": 10500,
+    "empty_rows_removed": 0,
+    "duplicate_pairs_removed": 0,
+    "clean_unique_pairs": 10500
+  },
+  "raw_synthetic_candidates": 3000,
+  "filtered_synthetic_pairs": 2000,
+  "filter_counts": {
+    "bad_length_ratio": 63,
+    "duplicate": 340,
+    "too_short": 12,
+    "too_short_chars": 1
+  },
+  "baseline_source_note": "Baseline was retrained in this stronger notebook because no previous valid baseline folder was found.",
+  "baseline_bleu": {
+    "bleu": 0.2358885039494083,
+    "signature": "BLEU|True = 0.24 22.2/2.9/0.5/0.2 (BP = 0.148 ratio = 0.344 hyp_len = 3639 ref_len = 10591)",
+    "tokenizer": "flores200"
+  },
+  "improved_bleu": {
+    "bleu": 0.21144318218515723,
+    "signature": "BLEU|True = 0.21 21.2/2.9/0.5/0.1 (BP = 0.164 ratio = 0.356 hyp_len = 3771 ref_len = 10591)",
+    "tokenizer": "flores200"
+  },
+  "baseline_summary": {
+    "run_name": "baseline_en_bn",
+    "epochs": 3,
+    "train_runtime_seconds": 735.46,
+    "train_loss": 5.902856568812816,
+    "validation_loss": 3.1324260234832764
+  },
+  "reverse_summary": {
+    "run_name": "reverse_bn_en_for_filtered_backtranslation",
+    "epochs": 3,
+    "train_runtime_seconds": 609.03,
+    "train_loss": 6.2213843592439595,
+    "validation_loss": 3.5816986560821533
+  },
+  "improved_summary": {
+    "run_name": "improved_en_bn_filtered_synthetic",
+    "epochs": 3,
+    "train_runtime_seconds": 940.81,
+    "train_loss": 5.609540384835485,
+    "validation_loss": 3.0680387020111084
+  }
+}

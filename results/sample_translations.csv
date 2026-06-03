@@ -1,0 +1,11 @@
+Source English,Reference Bangla,Baseline Prediction,Improved Prediction,Better / Worse note
+He cannot use his right arm.,তার ডান হাতের কব্জি নেই।,এবং তিনি নিজেদের সঙ্গে থাকতে পারবে না।,তাঁর সঙ্গে থাকা যায়নি।,Worse (sentence BLEU 4.17 vs 4.30)
+"Jammu and Kashmir Governor Satyapal Malik dissolved the state assembly, which has been in suspended animation, shortly after rival alliances staked claim to form the government.",সরকার গঠনের দাবি উঠতেই তড়িঘড়ি জম্মু-কাশ্মীর বিধানসভা ভেঙে দিলেন রাজ্যপাল সত্যপাল মালিক।,তাঁর বিরুদ্ধে সরকারের সঙ্গে যোগাযোগ করেন।,তাঁর বিরুদ্ধে সরকারের সঙ্গে যোগাযোগ করতে পারেনি।,Better (sentence BLEU 0.46 vs 0.25)
+The Administration of the University was made aware of this.,বিষয়টি বিশ্ববিদ্যালয় প্রশাসনের নজরে এসেছে।,এবং সরকারের সঙ্গে যোগাযোগ করা হয়েছে।,তাঁর সঙ্গে যোগাযোগ করা হয়েছে।,Worse (sentence BLEU 4.92 vs 4.94)
+But this notion appears to be false.,তবে এ ধারণা ভুল বলেই মনে হচ্ছে।,তবে এটা কিন্তু এই নীতিমালা করা হয়েছে।,তবে এই বিষয়টি প্রকাশ করতে পারেনি।,Better (sentence BLEU 5.80 vs 4.99)
+Public Education:,সামাজিকতা শিক্ষা :,এবং সরকারের নীতিমালা:,তাঁর দায়িত্ব:,No clear change (sentence BLEU 0.00 vs 0.00)
+"It begins in childhood, typically between the ages of 3 and 18 months old.",এটা শৈশবে বৈশিষ্ট্যগতভাবে শুরু হয় ৩ থেকে ১৮ মাস বয়সের মধ্যে।,তাদের মধ্যে তিন বছর বয়সে জন্ম হয়।,তাঁর জন্মের মধ্যে তিন বছর বয়সে জন্ম হয়।,Better (sentence BLEU 3.07 vs 2.77)
+Read what he said.,পড়ে নিন কি লিখলেন তিনি।,তাঁর কথা বলেন।,তাঁর সঙ্গে তিনি বলেন।,Better (sentence BLEU 8.52 vs 7.55)
+So the sell pressure remains always high.,কেননা নতুন ইস্যু এবং শেয়ারসংখ্যা কম হওয়ায় সর্বদাই প্রাথমিক ইস্যুর শেয়ার ক্রয়ের জন্য অতিরিক্ত চাপ পরিলক্ষিত হয়।,তবে এর মধ্যে তারা বেশ বড়।,তাঁর মধ্যে বেশ বড় হচ্ছে।,Worse (sentence BLEU 0.06 vs 0.12)
+"""""""Amit Shah and Arun Jailtey are no Gods""","""আশুতোষের কথায়, """"অমিত শাহ আর অরুণ জেটলি ভগবান নয়।""",এবং তিনি ছিলেন না।,তাঁর মধ্যে তিনি ছিলেন না।,No clear change (sentence BLEU 0.00 vs 0.00)
+Software architecture refers to the fundamental structures of a software system and the discipline of creating such structures and systems.,"সফটওয়্যার আর্কিটেকচার বলতে বোঝায় একটি সফটওয়্যার সিস্টেমের উচ্চ স্তরের কাঠামো, এই ধরনের কাঠামো তৈরি নিয়মাবলি, এবং এই কাঠামোর নথিপত্র।",এবং এর মধ্যে একটি প্রধান স্তম্ভ করা হয়।,"তবে, এর মধ্যে প্রযুক্তির নীতিমালা রয়েছে।",Better (sentence BLEU 0.15 vs 0.13)

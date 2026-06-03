@@ -1,0 +1,5 @@
+reason,count
+bad_length_ratio,63
+duplicate,340
+too_short,12
+too_short_chars,1

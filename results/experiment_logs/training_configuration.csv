@@ -1,0 +1,25 @@
+Parameter,Value
+model_name,google/mt5-small
+dataset_name,ai4bharat/samanantar
+dataset_config,bn
+train_size,5000
+validation_size,500
+test_size,500
+base_pool_size_for_same_split,7500
+synthetic_candidates,3000
+synthetic_target,2000
+min_filtered_synthetic,1500
+baseline_epochs_if_needed,3
+reverse_epochs,3
+improved_epochs,3
+batch_size,4
+gradient_accumulation_steps,4
+effective_batch_size,16
+learning_rate,0.0001
+optimizer,Adafactor
+fp16,False
+max_source_length,128
+max_target_length,128
+generation_max_new_tokens,96
+bleu_tokenizer,flores200
+gpu,Tesla T4

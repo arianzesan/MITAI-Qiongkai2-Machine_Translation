@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+.venv/
+venv/
+env/
+.env
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter / Colab
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# Hugging Face / model artifacts
+checkpoints/
+models/
+outputs/
+wandb/
+runs/
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+
+# Data cache and large generated data
+data/raw/
+data/processed/
+data/cache/
+synthetic_backtranslation_raw_candidates.csv
+cleaned_candidate_pairs.csv
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+

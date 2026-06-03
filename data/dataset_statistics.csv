@@ -1,0 +1,9 @@
+Split,Sentence pairs,Avg English length (words),Avg Bangla length (words)
+Full Samanantar bn train metadata,8604580,Not computed; full corpus not downloaded,Not computed; full corpus not downloaded
+Train,5000,11.46,10.13
+Validation,500,11.81,10.4
+Test,500,11.83,10.73
+BT candidate monolingual pool,3000,11.68,10.29
+Raw synthetic BT candidates,3000,7.23,10.29
+Filtered synthetic BT pairs used,2000,7.64,10.28
+Improved training total,7000,10.37,10.17
