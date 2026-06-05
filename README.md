@@ -1,10 +1,10 @@
 # English-Bangla Machine Translation with Back-Translation
 
-This repo is for my Master's research project:
+This repository contains the code, notebooks, and result files for my Master's research project:
 
 **Improving English-Bangla Translation in Low-Resource Settings Using Back-Translation**
 
-The main idea was simple: I wanted to test if back-translation can help English to Bangla translation when we do not use a very large amount of parallel data.
+The aim was to test whether back-translation can help English to Bangla translation when only a small parallel training subset is used.
 
 I used:
 
@@ -13,17 +13,17 @@ I used:
 - Google Colab T4 GPU
 - SacreBLEU for evaluation
 
-The final result was not that back-translation improved everything. Actually, in my final stronger experiment, BLEU went down. I kept that result because it is the real measured result.
+The final result was mixed. Back-translation reduced BLEU in the final comparison, although the validation loss became slightly lower. I kept this result as it was measured from the experiment.
 
 ## Research Question
 
 Does back-translation improve English-Bangla translation performance in a low-resource setting?
 
-My final answer from this experiment:
+My answer from the final experiment:
 
 > In this setup, no. Back-translation reduced BLEU, even after increasing and filtering synthetic data.
 
-It did improve validation loss a little, but BLEU became worse.
+Validation loss improved slightly, but BLEU became worse.
 
 ## Dataset
 
@@ -44,13 +44,13 @@ For the actual low-resource experiment I used:
 | Filtered synthetic BT pairs used | 2,000 | 7.64 | 10.28 |
 | Improved training total | 7,000 | 10.37 | 10.17 |
 
-The dataset statistics file is here:
+The measured dataset statistics are saved here:
 
 [`data/dataset_statistics.csv`](data/dataset_statistics.csv)
 
-## What I Did
+## Experiment
 
-The experiment had two main models.
+The experiment used two English-to-Bangla models and one reverse model.
 
 ### 1. Baseline model
 
@@ -92,7 +92,7 @@ and trained the English-to-Bangla model again using:
 
 ## Synthetic Data Filtering
 
-The first back-translation result was weak, so I ran a stronger final test.
+The first back-translation result was weak, so I also ran a stronger test with more synthetic candidates and filtering.
 
 In that final test:
 
@@ -108,7 +108,7 @@ I filtered out:
 - mostly punctuation/noisy outputs
 - repeated generic outputs
 
-Even after this, some synthetic English was still not semantically good. That is probably one main reason BLEU still dropped.
+Even after this, some generated English was still not semantically close enough to the Bangla target. This was probably one main reason BLEU still dropped.
 
 ## Final Result
 
@@ -125,17 +125,17 @@ BLEU change:
 - Absolute change: `-0.0244`
 - Relative change: `-10.36%`
 
-So the honest conclusion is:
+Main conclusion:
 
 > Back-translation did not improve BLEU in this experiment. It slightly improved validation loss, but the generated translations did not match the references better.
 
-## Why I Think BLEU Dropped
+## Why BLEU Probably Dropped
 
-The reverse model was also trained with limited data. So when it generated synthetic English, the sentences were sometimes fluent-looking but not accurate enough.
+The reverse model was also trained with limited data. When it generated synthetic English, some outputs looked fluent but were not accurate enough.
 
 That means the improved model was trained with extra data, but some of that extra data had wrong or weak meaning. More data did not automatically mean better data.
 
-This is the main thing I learned from the project.
+That was the main finding from the project: synthetic data quality matters more than simply adding more examples.
 
 ## Repo Structure
 
@@ -148,6 +148,7 @@ COMP8851-English-Bangla-BackTranslation/
 │   ├── dataset_description.md
 │   └── dataset_statistics.csv
 ├── notebooks/
+│   ├── final_submission_colab_en_bn_bt.ipynb
 │   ├── baseline_training.ipynb
 │   ├── back_translation.ipynb
 │   └── evaluation.ipynb
@@ -168,8 +169,11 @@ COMP8851-English-Bangla-BackTranslation/
 
 ## Important Files
 
+- [`notebooks/final_submission_colab_en_bn_bt.ipynb`](notebooks/final_submission_colab_en_bn_bt.ipynb)  
+  Clean Colab notebook for the final submission.
+
 - [`notebooks/back_translation.ipynb`](notebooks/back_translation.ipynb)  
-  Main final Colab experiment.
+  Earlier stronger back-translation notebook.
 
 - [`src/preprocess.py`](src/preprocess.py)  
   Dataset cleaning and splitting.
@@ -194,7 +198,7 @@ COMP8851-English-Bangla-BackTranslation/
 The easiest way is Colab.
 
 1. Open Google Colab.
-2. Upload [`notebooks/back_translation.ipynb`](notebooks/back_translation.ipynb).
+2. Upload [`notebooks/final_submission_colab_en_bn_bt.ipynb`](notebooks/final_submission_colab_en_bn_bt.ipynb).
 3. Set runtime to T4 GPU.
 4. Run all cells.
 5. Download the output ZIP from Colab.
@@ -224,7 +228,7 @@ python src/train_baseline.py \
   --output-dir models/baseline
 ```
 
-The Colab notebook is the main reproducible version for the final results.
+The Colab notebook is the main reproducible version for the final experiment.
 
 ## Limitations
 
@@ -250,4 +254,3 @@ Things I would try next:
 ## Final Takeaway
 
 Back-translation is useful in many machine translation projects, but in this experiment it did not improve English-Bangla BLEU. The quality of synthetic data mattered more than just increasing the amount of data.
-
